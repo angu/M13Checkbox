@@ -108,7 +108,10 @@
         //Do Nothing
     } else if (checkbox.checkState == M13CheckboxStateChecked) {
         [checkColor setFill];
-        [[checkbox getDefaultShape] fill];
+        if (self.checkbox.showTick) {
+            [[checkbox getDefaultShape] fill];
+        }
+        
     } else if (checkbox.checkState == M13CheckboxStateMixed) {
         UIBezierPath *mixedPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(checkbox.strokeWidth + ((boxRect.size.width - (.5 * self.frame.size.height)) * 0.5), (self.frame.size.height * .5) - ((0.09375 * self.frame.size.height) * .5), .5 * self.frame.size.height, 0.1875 * self.frame.size.height) cornerRadius:(0.09375 * self.frame.size.height)];
         [checkColor setFill];
@@ -229,6 +232,7 @@
     //Set the basic properties
     CGFloat heightForCheckbox = [self heightForCheckbox];
     _flat = YES;
+    _showTick = YES;
     _strokeColor = [UIColor colorWithRed:0.02 green:0.47 blue:1 alpha:1];
     _strokeWidth = kBoxStrokeWidth * heightForCheckbox;
     _checkColor = [UIColor colorWithRed:0.02 green:0.47 blue:1 alpha:1];

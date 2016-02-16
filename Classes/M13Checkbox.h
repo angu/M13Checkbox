@@ -47,6 +47,11 @@ typedef NS_ENUM(NSInteger, M13CheckboxAlignment) {
  The label that displays the text for the checkbox.
  */
 @property (nonatomic, retain) UILabel *titleLabel;
+
+/**
+ Show or not the tick.
+ */
+@property (nonatomic) BOOL showTick;
 /**
  The current state of the checkbox
  */
