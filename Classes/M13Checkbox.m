@@ -385,7 +385,9 @@
 }
 
 - (void)setCheckState:(M13CheckboxState)checkState{
+    [self willChangeValueForKey:@"checkState"];
     _checkState = checkState;
+    [self didChangeValueForKey:@"checkState"];
     [checkView setNeedsDisplay];
 }
 
